@@ -1,0 +1,93 @@
+body{
+    width: 965px;
+    margin:0 auto;
+}
+div.logo{
+    float: left;
+    line-height: 343px;
+}
+div.slider{
+    position: relative;
+    float: left;
+}
+div.clearfix{
+    clear: both;
+}
+div.showslide{
+    width: 1460px;
+    height: 243px;
+    background-image: url('static/files/banall.jpg');
+    transition: all 0.5s cubic-bezier(.73,.12,.73,.74) 0s;
+}
+div.slide{
+    width: 712px;
+    height: 241px;
+    overflow: hidden;
+    border: solid 1px #b3b3b3;
+}
+input[type="radio"]{
+    display: none;
+}
+.labels label{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #F7F7F7;
+    box-shadow:
+    0 0 0 2px #F7F7F7,
+    0 0 0 3px #b3b3b3,
+    0 0 0 4px #F7F7F7;;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+div.labels{
+    position: absolute;
+    top: 220px;
+    left: 335px;
+}
+#r1:checked ~ .labels label[for="r1"],
+#r2:checked ~ .labels label[for="r2"]{
+    background: #b3b3b3;
+}
+#r1:checked ~ .slide .showslide{
+    transform: translateX(0px);
+}
+#r2:checked ~ .slide .showslide {
+    transform: translateX(-730px);
+}
+.labelarrows .arrowright{
+    background: #707070 url('static/files/arrowright.png') center no-repeat;
+    background-size: 15px;
+    border: 1px solid #f7f7f7;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top:110px;
+    left:674px;
+    display: none;
+    transition: all 0.2s ease-out 0s;
+}
+.labelarrows .arrowright:hover,
+.labelarrows .arrowleft:hover{
+    color: #75b9c9;
+}
+#r1:checked ~ .labelarrows #a2,
+#r2:checked ~ .labelarrows #a1 {
+    display: block;
+}
+.labelarrows .arrowleft{
+    background: #707070 url('static/files/arrowleft.png') center no-repeat;
+    background-size: 15px;
+    border: 1px solid #f7f7f7;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top:110px;
+    left:20px;
+    display: none;
+    transition: all 0.2s ease-out 0s;
+}
+#r1:checked ~ .labelarrows #a4,
+#r2:checked ~ .labelarrows #a3 {
+    display: block;
+}
